@@ -68,11 +68,16 @@ The following table sums up the results of the optimizations for all surrogate m
 | [OptimizeWithGPSurrogate-TotalDirectly](notebooks/OptimizeWithGPSurrogate-TotalDirectly.ipynb) | Gaussian Process | 0 | 224 | 0.66 |
 | [OptimizeWithRandomForestSurrogate](notebooks/OptimizeWithRandomForestSurrogate.ipynb) | Random Forest | 0.24 | 204 | 0.5 |
 | [OptimizeWithSVRSurrogate](notebooks/OptimizeWithSVRSurrogate.ipynb) | SVR | 0 | 224 | 0.64 |
+
+
 NB: the optimization with the Random Forest got stuck in a local extremum, an algorithm that left more room for the exploration of the space wouldn't have. The takeaway is for me is that except if we have good reason to except the underlying phenomenon to be best described by a tree-based method, Random Forests are not very good surogate models, because of their lack of convexity (and even monotonicity).
 
 ## First criteria: optimize expected reading
 
 The [Exploratory Data Analysis](notebooks/ExploratoryDataAnalysis.ipynb) made it pretty clear the optimal allocation if optimizing only the expected reading time is to allocate all reading time to the self-help books. Further analyses with the surrogate only confirmed this.
+
+![image](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/GP.png)
+
 
 ## Second criteria: optimize expected reading standardized by its standard deviation
 
