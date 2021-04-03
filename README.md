@@ -76,22 +76,25 @@ NB: the optimization with the Random Forest got stuck in a local extremum, an al
 
 The [Exploratory Data Analysis](notebooks/ExploratoryDataAnalysis.ipynb) made it pretty clear the optimal allocation if optimizing only the expected reading time is to allocate all reading time to the self-help books. Further analyses with the surrogate only confirmed this.
 
-The actual function:
-![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/real.png)
+Actual function            | Gaussian Process               
+:-------------------------:|:-------------------------:|
+![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/real.png) | ![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/GP.png)  
 
-Gaussian Process             |  Random Forest           | Support Vector Regression
-:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/GP.png)  |  ![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/RF.png)  | ![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/SVR.png)
+Random Forest           | Support Vector Regression
+:-------------------------:|:-------------------------:
+![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/RF.png)  | ![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/SVR.png)
 
-
+ It is no surprise the Gaussian Process gives the most accurate estimate since the data was generated as a gaussian process (cf [Generate data](notebooks/GenerateData.ipynb) for a more in-depth view). The Random Forest, because it is tree-based creates vast areas of constant values (and because we limited the number of trees, it is pretty simple, as we had hoped for).
 
 ## Second criteria: optimize expected reading standardized by its standard deviation
 
 The optimization of the second criteria is more complex. The [Exploratory Data Analysis](notebooks/ExploratoryDataAnalysis.ipynb) suggests the demand for fiction books is more stable, so the optimal allocation is more balanced.
 
-The actual function:
-![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/real_sharpe.png)
+Actual function | Gaussian Process             
+:-------------------------:|:-------------------------:
+![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/real_sharpe.png) | ![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/GP_sharpe.png)  
 
-Gaussian Process             |  Random Forest           | Support Vector Regression
-:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/GP_sharpe.png)  |  ![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/RF_sharpe.png)  | ![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/SVR_sharpe.png)
+  Random Forest           | Support Vector Regression
+:-------------------------:|:-------------------------:
+ ![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/RF_sharpe.png)  | ![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/SVR_sharpe.png)
+
