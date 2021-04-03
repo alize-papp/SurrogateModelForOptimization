@@ -76,7 +76,10 @@ NB: the optimization with the Random Forest got stuck in a local extremum, an al
 
 The [Exploratory Data Analysis](notebooks/ExploratoryDataAnalysis.ipynb) made it pretty clear the optimal allocation if optimizing only the expected reading time is to allocate all reading time to the self-help books. Further analyses with the surrogate only confirmed this.
 
-![image](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/GP.png)
+Gaussian Process             |  Random Forest           | Support Vector Regression
+:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/GP.png)  |  ![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/RF.png)  | ![](https://github.com/alize-papp/SurrogateModelForOptimization/blob/main/images/SVR.png)
+
 
 
 ## Second criteria: optimize expected reading standardized by its standard deviation
